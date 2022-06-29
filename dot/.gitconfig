@@ -1,0 +1,43 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[core]
+	#pager = delta
+	excludesfile = /Users/stargirl/.gitignore_global
+	editor = code --wait
+	autocrlf = input
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	syntax-theme = Dracula
+	keep-plus-minus-markers = false
+	navigate = true  # use n and N to move between diff sections
+	light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+	side-by-side = true
+	line-numbers =  true
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	algorithm = histogram
+
+[user]
+	name = Thea Flowers
+	email = thea@winterbloom.com
+	signingkey = 520124451403756F
+[help]
+	autocorrect = 5
+[init]
+	defaultBranch = main
+[pull]
+	ff = only
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/local/MacGPG2/bin/gpg2
